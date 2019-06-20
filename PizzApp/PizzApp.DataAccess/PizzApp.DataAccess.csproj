@@ -50,6 +50,7 @@
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\ProductMap.cs" />
     <Compile Include="Concrete\EntityFramework\PizzaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
