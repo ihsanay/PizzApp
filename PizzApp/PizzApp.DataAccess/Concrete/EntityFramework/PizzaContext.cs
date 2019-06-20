@@ -1,4 +1,5 @@
-﻿using PizzApp.Entities.Concrete;
+﻿using PizzApp.DataAccess.Concrete.EntityFramework.Mappings;
+using PizzApp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,5 +17,11 @@ namespace PizzApp.DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //TODO: tüm entityler eklenecek
+            modelBuilder.Configurations.Add(new ProductMap());
+        }
     }
 }
