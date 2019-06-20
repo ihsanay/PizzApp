@@ -1,4 +1,5 @@
 ﻿using PizzApp.Business.Abstract;
+using PizzApp.Core.DataAccess;
 using PizzApp.DataAccess.Abstract;
 using PizzApp.Entities.Concrete;
 using System;
@@ -12,9 +13,11 @@ namespace PizzApp.Business.Concrete.Managers
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
-        public ProductManager(IProductDal productDal)
+        private IQueryableRepository<Product> _queryable;
+        public ProductManager(IProductDal productDal, IQueryableRepository<Product> queryable)
         {
             _productDal = productDal;
+            _queryable = queryable;
         }
         public Product Add(Product product)
         {
