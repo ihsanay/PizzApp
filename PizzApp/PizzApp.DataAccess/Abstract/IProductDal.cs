@@ -1,4 +1,5 @@
 ﻿using PizzApp.Core.DataAccess;
+using PizzApp.Entities.ComplexTypes;
 using PizzApp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace PizzApp.DataAccess.Abstract
 {
-    interface IProductDal:IEntityRepository<Product>
+    public interface IProductDal:IEntityRepository<Product>
     {
+        //Complex
+        List<ProductDetail> GetProductDetails();
     }
 }

@@ -17,11 +17,13 @@ namespace PizzApp.DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductType> ProductTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //TODO: tüm entityler eklenecek
             modelBuilder.Configurations.Add(new ProductMap());
+            modelBuilder.Configurations.Add(new ProductTypeMap());
         }
     }
 }
